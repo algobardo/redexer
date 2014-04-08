@@ -94,10 +94,10 @@ inline static unsigned long sample_ppc_10()
 #include <caml/memory.h>
 
 // At configuration time, we estimated the cycles per microsecond as
-// 2542.857.  But if we can get the cycle counts directly from the OS,
+// 0.  But if we can get the cycle counts directly from the OS,
 // do that instead, since it's more reliable and it lets us move programs
 // to different machines without recompiling.
-double cycles_per_usec = 2542.857;
+double cycles_per_usec = 0;
 
 #if defined(__FreeBSD__) 
 #define CAN_GET_SPEED_FROM_OS
@@ -116,7 +116,7 @@ double cycles_per_usec = 2542.857;
     if (sysctlbyname("machdep.tsc_freq", (void *) &tscfreq,
                      &tflen, NULL, 0) < 0) {
       perror("sysctl failed");
-      return 2542.857;
+      return 0;
     }
     return (double)tscfreq / 1000000; // We care about cycles per microsecond
   }
@@ -149,7 +149,7 @@ double cycles_per_usec = 2542.857;
       }
     }
     // Reading /proc/cpuinfo failed to find "cpu MHz"
-    return 2542.857;
+    return 0;
   }
 #endif
 

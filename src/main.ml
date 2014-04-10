@@ -183,6 +183,11 @@ let dat = ref "data"
 
 let act = ref "activity.txt"
 
+let testing_instrument (tx: D.dex) : unit =
+  Testing.modify tx;
+  (* finally, dump the rewritten dex *)
+  (Dump.dump "rewrite.dex") tx
+
 let instrument_logging (tx: D.dex) : unit =
   let rnm = !dat^"/rename" in
 try (
@@ -253,6 +258,7 @@ let do_listener      () = task := Some dolistener
 
 let do_logging       () = task := Some instrument_logging
 let do_directed      () = task := Some rewrite_directed
+let do_testing			() = task := Some testing_instrument
 
 let arg_specs = A.align
   [
@@ -291,6 +297,7 @@ let arg_specs = A.align
     ("-const",      A.Unit do_const,      " constant propagation");
     ("-reach",      A.Unit do_reach,      " reaching definition");
     ("-listener",   A.Unit do_listener,   " find listener relations");
+		("-testing",   A.Unit do_testing,   " execute the testing shake");
 
     ("-logging",  A.Unit do_logging,
      " instrument logging feature into the given dex");

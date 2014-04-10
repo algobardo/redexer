@@ -1,0 +1,50 @@
+\contentsline {section}{\numberline {1}Module {\tt {Util}} : This module offers some utility functions}{3}
+\contentsline {section}{\numberline {2}Module {\tt {Log}} : inspired by {\tt {android.util.Log}}}{4}
+\contentsline {section}{\numberline {3}Module {\tt {Java}} : This module provides utility functions for handling {\tt {Java}} language}{4}
+\contentsline {subsection}{\numberline {3.1}Primitives}{4}
+\contentsline {subsection}{\numberline {3.2}Type Descriptions}{5}
+\contentsline {subsection}{\numberline {3.3}Libraries}{6}
+\contentsline {section}{\numberline {4}Module {\tt {Instr}} : This module defines types for Dalvik bytecodes and provides utility functions for generating, parsing and dumping instructions.}{9}
+\contentsline {subsection}{\numberline {4.1}Types}{9}
+\contentsline {subsection}{\numberline {4.2}Utilities}{23}
+\contentsline {subsection}{\numberline {4.3}Parsing and Dumping}{24}
+\contentsline {subsection}{\numberline {4.4}Generating}{24}
+\contentsline {section}{\numberline {5}Module {\tt {Dex}} : This module defines types for DEX binary and provides utility functions for traversing DEX file and getting info from DEX file.}{25}
+\contentsline {subsection}{\numberline {5.1}Types}{25}
+\contentsline {subsection}{\numberline {5.2}Utilities}{34}
+\contentsline {subsection}{\numberline {5.3}Access flags}{35}
+\contentsline {subsection}{\numberline {5.4}Navigation}{37}
+\contentsline {subsection}{\numberline {5.5}Modification helper}{41}
+\contentsline {section}{\numberline {6}Module {\tt {Parse}} : This module provides a function for parsing binary input channel.}{41}
+\contentsline {section}{\numberline {7}Module {\tt {Visitor}} : This module provides visitor pattern.}{42}
+\contentsline {section}{\numberline {8}Module {\tt {Android}} : This module provides utility functions for handling {\tt {Android}} platform, for example, it provides a number of typical names for commonly used classes within the Android framework (helpful for finding and manipulating things like Buttons, for example)}{44}
+\contentsline {subsection}{\numberline {8.1}Libraries}{44}
+\contentsline {subsection}{\numberline {8.2}Utilities}{50}
+\contentsline {subsection}{\numberline {8.3}Permissions}{50}
+\contentsline {subsection}{\numberline {8.4}Ads}{51}
+\contentsline {subsection}{\numberline {8.5}Analyses}{51}
+\contentsline {section}{\numberline {9}Module {\tt {Unparse}} : This module provides utility functions for pretty printing or collecting information about DEX file.}{51}
+\contentsline {subsection}{\numberline {9.1}Pretty Printing}{51}
+\contentsline {subsection}{\numberline {9.2}Collecting Information}{52}
+\contentsline {section}{\numberline {10}Module {\tt {Htmlunparse}} : This module provides functions for dumping contents of dex files in a directory based html structure, allowing the viewer to jump around the directory to more easily visualize code.}{52}
+\contentsline {subsection}{\numberline {10.1}Generate HTML output}{52}
+\contentsline {section}{\numberline {11}Module {\tt {Callgraph}} : This module defines a type for call graph and provides functions for generating and printing a call graph.}{52}
+\contentsline {section}{\numberline {12}Module {\tt {Ctrlflow}} : This module defines types for control-flow graph and dominance relations, and provides utility functions for obtaining information from such graphs.}{53}
+\contentsline {subsection}{\numberline {12.1}Control-Flow Graph}{53}
+\contentsline {subsection}{\numberline {12.2}Dominator Tree}{53}
+\contentsline {subsection}{\numberline {12.3}Post Dominator Tree}{54}
+\contentsline {subsection}{\numberline {12.4}Control-flow Module for Data-flow Analysis}{54}
+\contentsline {subsection}{\numberline {12.5}DOTtify}{55}
+\contentsline {section}{\numberline {13}Module {\tt {Dataflow}} : This module provides data-flow analysis frameworks}{55}
+\contentsline {section}{\numberline {14}Module {\tt {Liveness}} : This module defines liveness analysis using {\tt {Dataflow}}[13\hbox {}] module.}{58}
+\contentsline {section}{\numberline {15}Module {\tt {Propagation}} : This module offers constant propagation analysis using {\tt {Dataflow}}[13\hbox {}]}{58}
+\contentsline {section}{\numberline {16}Module {\tt {Reaching}} : This module conducts reaching definition analysis via {\tt {Dataflow}}[13\hbox {}] module.}{59}
+\contentsline {section}{\numberline {17}Module {\tt {Modify}} : This module provides utility functions for modifying DEX binary.}{59}
+\contentsline {subsection}{\numberline {17.1}Utilities}{59}
+\contentsline {subsection}{\numberline {17.2}Modification}{59}
+\contentsline {subsection}{\numberline {17.3}Application}{62}
+\contentsline {section}{\numberline {18}Module {\tt {Combine}} : This module provides a function for merging two DEX binaries.}{62}
+\contentsline {section}{\numberline {19}Module {\tt {Dump}} : This module provides utilities for dumping a dex file into an on disk file.}{63}
+\contentsline {section}{\numberline {20}Module {\tt {Testing}} : instrument testing features into the dex accordingly}{63}
+\contentsline {section}{\numberline {21}Module {\tt {Logging}} : This module provides special functions for logging apps}{63}
+\contentsline {section}{\numberline {22}Module {\tt {Main}} : Main workhorse}{63}

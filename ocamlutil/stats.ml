@@ -1,20 +1,29 @@
-(* The following functions are implemented in perfcount.c *) 
+(* (* The following functions are implemented in perfcount.c *)                       *)
 
-(* Returns true if we have the performance counters *)
-external has_performance_counters: unit -> bool = "has_performance_counters"
+(* (* Returns true if we have the performance counters *)                             *)
+(* external has_performance_counters: unit -> bool = "has_performance_counters"       *)
 
-(* Initializes the CPU speed and returns true if we have
-   the performance counters *)
-external reset_performance_counters: unit -> bool = "reset_performance_counters"
+(* (* Initializes the CPU speed and returns true if we have                           *)
+(*    the performance counters *)                                                     *)
+(* external reset_performance_counters: unit -> bool = "reset_performance_counters"   *)
 
-(* Returns number of seconds since the first read *)
-external read_pentium_perfcount : unit -> float = "read_pentium_perfcount"
+(* (* Returns number of seconds since the first read *)                               *)
+(* external read_pentium_perfcount : unit -> float = "read_pentium_perfcount"         *)
 
-(* Returns current cycle counter, divided by 1^20, and truncated to 30 bits *)
-external sample_pentium_perfcount_20 : unit -> int = "sample_pentium_perfcount_20"
+(* (* Returns current cycle counter, divided by 1^20, and truncated to 30 bits *)     *)
+(* external sample_pentium_perfcount_20 : unit -> int = "sample_pentium_perfcount_20" *)
 
-(* Returns current cycle counter, divided by 1^10, and truncated to 30 bits *)
-external sample_pentium_perfcount_10 : unit -> int = "sample_pentium_perfcount_10"
+(* (* Returns current cycle counter, divided by 1^10, and truncated to 30 bits *)     *)
+(* external sample_pentium_perfcount_10 : unit -> int = "sample_pentium_perfcount_10" *)
+
+
+
+let has_performance_counters () = false
+let reset_performance_counters () = true
+let read_pentium_perfcount () = 3.0
+let sample_pentium_perfcount_20 () = 3 
+let sample_pentium_perfcount_10 () = 3
+
 
 
 (** Whether to use the performance counters (on Pentium only) *)

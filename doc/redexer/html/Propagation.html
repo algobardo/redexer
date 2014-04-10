@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Liveness.html">
+<link rel="next" href="Reaching.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of class types" rel=Appendix href="index_class_types.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Util" rel="Chapter" href="Util.html">
+<link title="Log" rel="Chapter" href="Log.html">
+<link title="Java" rel="Chapter" href="Java.html">
+<link title="Instr" rel="Chapter" href="Instr.html">
+<link title="Dex" rel="Chapter" href="Dex.html">
+<link title="Parse" rel="Chapter" href="Parse.html">
+<link title="Visitor" rel="Chapter" href="Visitor.html">
+<link title="Android" rel="Chapter" href="Android.html">
+<link title="Unparse" rel="Chapter" href="Unparse.html">
+<link title="Htmlunparse" rel="Chapter" href="Htmlunparse.html">
+<link title="Callgraph" rel="Chapter" href="Callgraph.html">
+<link title="Ctrlflow" rel="Chapter" href="Ctrlflow.html">
+<link title="Dataflow" rel="Chapter" href="Dataflow.html">
+<link title="Liveness" rel="Chapter" href="Liveness.html">
+<link title="Propagation" rel="Chapter" href="Propagation.html">
+<link title="Reaching" rel="Chapter" href="Reaching.html">
+<link title="Modify" rel="Chapter" href="Modify.html">
+<link title="Combine" rel="Chapter" href="Combine.html">
+<link title="Dump" rel="Chapter" href="Dump.html">
+<link title="Testing" rel="Chapter" href="Testing.html">
+<link title="Logging" rel="Chapter" href="Logging.html">
+<link title="Main" rel="Chapter" href="Main.html"><title>Propagation</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Liveness.html" title="Liveness">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="Reaching.html" title="Reaching">Next</a>
+</div>
+<h1>Module <a href="type_Propagation.html">Propagation</a></h1>
+
+<pre><span class="keyword">module</span> Propagation: <code class="code">sig</code> <a href="Propagation.html">..</a> <code class="code">end</code></pre><div class="info module top">
+This module offers constant propagation analysis using <a href="Dataflow.html"><code class="code">Dataflow</code></a><br>
+</div>
+<hr width="100%">
+
+<pre><code><span id="TYPEvalue"><span class="keyword">type</span> <code class="type"></code>value</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTvalue.Const"><span class="constructor">Const</span></span> <span class="keyword">of</span> <code class="type">int64</code></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >numerical constant</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTvalue.String"><span class="constructor">String</span></span> <span class="keyword">of</span> <code class="type">string</code></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >const-string</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTvalue.Clazz"><span class="constructor">Clazz</span></span> <span class="keyword">of</span> <code class="type">string</code></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >const-class</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTvalue.Object"><span class="constructor">Object</span></span> <span class="keyword">of</span> <code class="type">string</code></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >instance</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTvalue.Intent"><span class="constructor">Intent</span></span> <span class="keyword">of</span> <code class="type">string</code></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Intent for a specific component</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTvalue.Field"><span class="constructor">Field</span></span> <span class="keyword">of</span> <code class="type">string * string</code></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >static fields</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTvalue.BOT"><span class="constructor">BOT</span></span></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >non-const</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTvalue.TOP"><span class="constructor">TOP</span></span></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >undefined</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr></table>
+
+
+
+<pre><span id="VALval_to_str"><span class="keyword">val</span> val_to_str</span> : <code class="type"><a href="Propagation.html#TYPEvalue">value</a> -> string</code></pre><div class="info ">
+make <a href="Propagation.html#TYPEvalue"><code class="code">Propagation.value</code></a> printable<br>
+</div>
+
+<pre><span id="TYPEpropagation"><span class="keyword">type</span> <code class="type"></code>propagation</span> = <code class="type">(module Dataflow.ANALYSIS with type l = <a href="Propagation.html#TYPEvalue">value</a> Util.IM.t and type st = <br>        <a href="Dex.html#TYPElink">Dex.link</a>)</code> </pre>
+
+
+<pre><span id="VALmake_dfa"><span class="keyword">val</span> make_dfa</span> : <code class="type"><a href="Dex.html#TYPEdex">Dex.dex</a> -> <a href="Dex.html#TYPEcode_item">Dex.code_item</a> -> <a href="Propagation.html#TYPEpropagation">propagation</a></code></pre><div class="info ">
+make constant propagation analysis<br>
+</div>
+</body></html>

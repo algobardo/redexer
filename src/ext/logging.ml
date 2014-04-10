@@ -347,7 +347,7 @@ class logger (dx: D.dex) =
     let args = if J.is_wide tname then [r; r+1] else [r; r] in
     (* use invoke-*-range to support registers whose index is over 1 byte *)
     I.new_invoke stt_rnge (args @ [D.of_idx v_of])
-  in
+      in
 object
   inherit V.iterator dx
 

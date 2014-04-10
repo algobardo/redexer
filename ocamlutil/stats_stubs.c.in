@@ -179,7 +179,7 @@ value reset_performance_counters() {
 
 value read_pentium_perfcount()
 {
-  double counter = (double)read_ppc() / (1000000.0 * cycles_per_usec);
+  double counter = (double)100 / (1000000.0 * cycles_per_usec);
   return copy_double(counter);
 }
 

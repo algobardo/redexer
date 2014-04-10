@@ -12,3 +12,7 @@
 *.cmi
 *.cmo
 *.cmx
+main.d.byte
+main.native
+main.byte
+rewrite.dex

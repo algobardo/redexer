@@ -3,8 +3,8 @@
 	<section name="OcamlbuildSettings">
 		<item value="" key="ocamlbuildProjectLinkerFlags"/>
 		<item value="unix,str" key="ocamlbuildProjectLibs"/>
-		<item value="" key="ocamlbuildProjectCompilerFlags"/>
 		<item value="-pkgs &quot;sha, batteries&quot;" key="ocamlbuildProjectOtherFlags"/>
+		<item value="" key="ocamlbuildProjectCompilerFlags"/>
 		<item value="true" key="ocamlbuildGenerateTypeInfo"/>
 		<item value="src/main.d.byte" key="ocamlbuildProjectTargets"/>
 	</section>

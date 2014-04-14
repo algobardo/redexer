@@ -1,0 +1,17 @@
+#!/usr/bin/ipython --profile=pysh
+# Important: save as .ipy to run with ipython
+
+TOOL = "./tools"
+APKT = TOOL + "/apktool.jar"
+JAR = TOOL + "/signapk.jar"
+PEM = TOOL + "/platform.x509.pem"
+PK8 = TOOL + "/platform.pk8"
+
+def replaceapk ():
+	!./build.sh
+	!apktool d -s -f tests_apk/app-debug-test-unaligned.apk tests_apk/injDir
+	!./main.d.byte -log verbose -testing tests_apk/injDir/classes.dex
+	!cp tests_apk/rewrite.dex tests_apk/injDir/classes.dex
+	!apktool b -f tests_apk/injDir tests_apk/rebuilt.apk
+	!apktool d -f tests_apk/rebuilt.apk tests_apk/rebuilt_smali
+	!!for file in $(find . -name "Solo.smali"); do subl $file; done

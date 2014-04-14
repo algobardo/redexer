@@ -1,0 +1,406 @@
+### Starting build.
+# Target: src/main.ml.depends, tags: { bin_annot, extension:ml, file:src/main.ml, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/main.ml > src/main.ml.depends # cached
+# Target: src/main.mli.depends, tags: { bin_annot, extension:mli, file:src/main.mli, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/main.mli > src/main.mli.depends # cached
+# Target: src/main.cmi, tags: { bin_annot, byte, compile, extension:mli, file:src/main.mli, interf, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/main.cmi src/main.mli # cached
+# Target: src/android.ml.depends, tags: { bin_annot, extension:ml, file:src/android.ml, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/android.ml > src/android.ml.depends # cached
+# Target: src/android.mli.depends, tags: { bin_annot, extension:mli, file:src/android.mli, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/android.mli > src/android.mli.depends # cached
+# Target: src/dex.mli.depends, tags: { bin_annot, extension:mli, file:src/dex.mli, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/dex.mli > src/dex.mli.depends # cached
+# Target: ocamlutil/dynArray.mli.depends, tags: { bin_annot, extension:mli, file:ocamlutil/dynArray.mli, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules ocamlutil/dynArray.mli > ocamlutil/dynArray.mli.depends # cached
+# Target: ocamlutil/enum.mli.depends, tags: { bin_annot, extension:mli, file:ocamlutil/enum.mli, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules ocamlutil/enum.mli > ocamlutil/enum.mli.depends # cached
+# Target: ocamlutil/enum.cmi, tags: { bin_annot, byte, compile, extension:mli, file:ocamlutil/enum.mli, interf, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I ocamlutil -I src -I src/ext -o ocamlutil/enum.cmi ocamlutil/enum.mli # cached
+# Target: ocamlutil/dynArray.cmi, tags: { bin_annot, byte, compile, extension:mli, file:ocamlutil/dynArray.mli, interf, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I ocamlutil -I src -I src/ext -o ocamlutil/dynArray.cmi ocamlutil/dynArray.mli # cached
+# Target: src/instr.mli.depends, tags: { bin_annot, extension:mli, file:src/instr.mli, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/instr.mli > src/instr.mli.depends # cached
+# Target: src/instr.cmi, tags: { bin_annot, byte, compile, extension:mli, file:src/instr.mli, interf, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/instr.cmi src/instr.mli # cached
+# Target: ocamlutil/uTF8.mli.depends, tags: { bin_annot, extension:mli, file:ocamlutil/uTF8.mli, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules ocamlutil/uTF8.mli > ocamlutil/uTF8.mli.depends # cached
+# Target: ocamlutil/uChar.mli.depends, tags: { bin_annot, extension:mli, file:ocamlutil/uChar.mli, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules ocamlutil/uChar.mli > ocamlutil/uChar.mli.depends # cached
+# Target: ocamlutil/uChar.cmi, tags: { bin_annot, byte, compile, extension:mli, file:ocamlutil/uChar.mli, interf, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I ocamlutil -I src -I src/ext -o ocamlutil/uChar.cmi ocamlutil/uChar.mli # cached
+# Target: ocamlutil/uTF8.cmi, tags: { bin_annot, byte, compile, extension:mli, file:ocamlutil/uTF8.mli, interf, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I ocamlutil -I src -I src/ext -o ocamlutil/uTF8.cmi ocamlutil/uTF8.mli # cached
+# Target: src/dex.cmi, tags: { bin_annot, byte, compile, extension:mli, file:src/dex.mli, interf, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/dex.cmi src/dex.mli # cached
+# Target: src/android.cmi, tags: { bin_annot, byte, compile, extension:mli, file:src/android.mli, interf, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/android.cmi src/android.mli # cached
+# Target: src/dex.ml.depends, tags: { bin_annot, extension:ml, file:src/dex.ml, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/dex.ml > src/dex.ml.depends # cached
+# Target: ocamlutil/dynArray.ml.depends, tags: { bin_annot, extension:ml, file:ocamlutil/dynArray.ml, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules ocamlutil/dynArray.ml > ocamlutil/dynArray.ml.depends # cached
+# Target: ocamlutil/enum.ml.depends, tags: { bin_annot, extension:ml, file:ocamlutil/enum.ml, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules ocamlutil/enum.ml > ocamlutil/enum.ml.depends # cached
+# Target: ocamlutil/enum.cmx, tags: { bin_annot, compile, extension:cmx, extension:ml, file:ocamlutil/enum.cmx, file:ocamlutil/enum.ml, implem, native, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlopt -c -package batteries -package sha -I ocamlutil -I src -I src/ext -o ocamlutil/enum.cmx ocamlutil/enum.ml # cached
+# Target: ocamlutil/dynArray.cmx, tags: { bin_annot, compile, extension:cmx, extension:ml, file:ocamlutil/dynArray.cmx, file:ocamlutil/dynArray.ml, implem, native, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlopt -c -package batteries -package sha -I ocamlutil -I src -I src/ext -o ocamlutil/dynArray.cmx ocamlutil/dynArray.ml # cached
+# Target: src/instr.ml.depends, tags: { bin_annot, extension:ml, file:src/instr.ml, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/instr.ml > src/instr.ml.depends # cached
+# Target: src/util.ml.depends, tags: { bin_annot, extension:ml, file:src/util.ml, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/util.ml > src/util.ml.depends # cached
+# Target: src/util.mli.depends, tags: { bin_annot, extension:mli, file:src/util.mli, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/util.mli > src/util.mli.depends # cached
+# Target: src/util.cmi, tags: { bin_annot, byte, compile, extension:mli, file:src/util.mli, interf, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/util.cmi src/util.mli # cached
+# Target: src/util.cmx, tags: { bin_annot, compile, extension:cmx, extension:ml, file:src/util.cmx, file:src/util.ml, implem, native, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlopt -c -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/util.cmx src/util.ml # cached
+# Target: src/instr.cmx, tags: { bin_annot, compile, extension:cmx, extension:ml, file:src/instr.cmx, file:src/instr.ml, implem, native, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlopt -c -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/instr.cmx src/instr.ml # cached
+# Target: src/java.ml.depends, tags: { bin_annot, extension:ml, file:src/java.ml, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/java.ml > src/java.ml.depends # cached
+# Target: src/java.mli.depends, tags: { bin_annot, extension:mli, file:src/java.mli, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/java.mli > src/java.mli.depends # cached
+# Target: src/java.cmi, tags: { bin_annot, byte, compile, extension:mli, file:src/java.mli, interf, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/java.cmi src/java.mli # cached
+# Target: src/java.cmx, tags: { bin_annot, compile, extension:cmx, extension:ml, file:src/java.cmx, file:src/java.ml, implem, native, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlopt -c -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/java.cmx src/java.ml # cached
+# Target: ocamlutil/uTF8.ml.depends, tags: { bin_annot, extension:ml, file:ocamlutil/uTF8.ml, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules ocamlutil/uTF8.ml > ocamlutil/uTF8.ml.depends # cached
+# Target: ocamlutil/uChar.ml.depends, tags: { bin_annot, extension:ml, file:ocamlutil/uChar.ml, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules ocamlutil/uChar.ml > ocamlutil/uChar.ml.depends # cached
+# Target: ocamlutil/uChar.cmx, tags: { bin_annot, compile, extension:cmx, extension:ml, file:ocamlutil/uChar.cmx, file:ocamlutil/uChar.ml, implem, native, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlopt -c -package batteries -package sha -I ocamlutil -I src -I src/ext -o ocamlutil/uChar.cmx ocamlutil/uChar.ml # cached
+# Target: ocamlutil/uTF8.cmx, tags: { bin_annot, compile, extension:cmx, extension:ml, file:ocamlutil/uTF8.cmx, file:ocamlutil/uTF8.ml, implem, native, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlopt -c -package batteries -package sha -I ocamlutil -I src -I src/ext -o ocamlutil/uTF8.cmx ocamlutil/uTF8.ml # cached
+# Target: src/dex.cmx, tags: { bin_annot, compile, extension:cmx, extension:ml, file:src/dex.cmx, file:src/dex.ml, implem, native, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlopt -c -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/dex.cmx src/dex.ml # cached
+# Target: src/log.ml.depends, tags: { bin_annot, extension:ml, file:src/log.ml, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/log.ml > src/log.ml.depends # cached
+# Target: src/log.mli.depends, tags: { bin_annot, extension:mli, file:src/log.mli, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/log.mli > src/log.mli.depends # cached
+# Target: src/log.cmi, tags: { bin_annot, byte, compile, extension:mli, file:src/log.mli, interf, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/log.cmi src/log.mli # cached
+# Target: src/log.cmx, tags: { bin_annot, compile, extension:cmx, extension:ml, file:src/log.cmx, file:src/log.ml, implem, native, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlopt -c -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/log.cmx src/log.ml # cached
+# Target: ocamlutil/stats.ml.depends, tags: { bin_annot, extension:ml, file:ocamlutil/stats.ml, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules ocamlutil/stats.ml > ocamlutil/stats.ml.depends # cached
+# Target: ocamlutil/stats.mli.depends, tags: { bin_annot, extension:mli, file:ocamlutil/stats.mli, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules ocamlutil/stats.mli > ocamlutil/stats.mli.depends # cached
+# Target: ocamlutil/stats.cmi, tags: { bin_annot, byte, compile, extension:mli, file:ocamlutil/stats.mli, interf, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I ocamlutil -I src -I src/ext -o ocamlutil/stats.cmi ocamlutil/stats.mli # cached
+# Target: ocamlutil/stats.cmx, tags: { bin_annot, compile, extension:cmx, extension:ml, file:ocamlutil/stats.cmx, file:ocamlutil/stats.ml, implem, native, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlopt -c -package batteries -package sha -I ocamlutil -I src -I src/ext -o ocamlutil/stats.cmx ocamlutil/stats.ml # cached
+# Target: src/visitor.ml.depends, tags: { bin_annot, extension:ml, file:src/visitor.ml, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/visitor.ml > src/visitor.ml.depends # cached
+# Target: src/visitor.mli.depends, tags: { bin_annot, extension:mli, file:src/visitor.mli, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/visitor.mli > src/visitor.mli.depends # cached
+# Target: src/visitor.cmi, tags: { bin_annot, byte, compile, extension:mli, file:src/visitor.mli, interf, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/visitor.cmi src/visitor.mli # cached
+# Target: src/visitor.cmx, tags: { bin_annot, compile, extension:cmx, extension:ml, file:src/visitor.cmx, file:src/visitor.ml, implem, native, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlopt -c -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/visitor.cmx src/visitor.ml # cached
+# Target: src/android.cmx, tags: { bin_annot, compile, extension:cmx, extension:ml, file:src/android.cmx, file:src/android.ml, implem, native, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlopt -c -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/android.cmx src/android.ml # cached
+# Target: src/ext/callgraph.ml.depends, tags: { bin_annot, extension:ml, file:src/ext/callgraph.ml, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/ext/callgraph.ml > src/ext/callgraph.ml.depends # cached
+# Target: src/ext/callgraph.mli.depends, tags: { bin_annot, extension:mli, file:src/ext/callgraph.mli, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/ext/callgraph.mli > src/ext/callgraph.mli.depends # cached
+# Target: src/ext/callgraph.cmi, tags: { bin_annot, byte, compile, extension:mli, file:src/ext/callgraph.mli, interf, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/callgraph.cmi src/ext/callgraph.mli # cached
+# Target: src/ext/dataflow.ml.depends, tags: { bin_annot, extension:ml, file:src/ext/dataflow.ml, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/ext/dataflow.ml > src/ext/dataflow.ml.depends # cached
+# Target: src/ext/dataflow.mli.depends, tags: { bin_annot, extension:mli, file:src/ext/dataflow.mli, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/ext/dataflow.mli > src/ext/dataflow.mli.depends # cached
+# Target: src/ext/ctrlflow.mli.depends, tags: { bin_annot, extension:mli, file:src/ext/ctrlflow.mli, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/ext/ctrlflow.mli > src/ext/ctrlflow.mli.depends # cached
+# Target: src/ext/ctrlflow.cmi, tags: { bin_annot, byte, compile, extension:mli, file:src/ext/ctrlflow.mli, interf, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/ctrlflow.cmi src/ext/ctrlflow.mli # cached
+# Target: src/ext/dataflow.cmi, tags: { bin_annot, byte, compile, extension:mli, file:src/ext/dataflow.mli, interf, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/dataflow.cmi src/ext/dataflow.mli # cached
+# Target: src/ext/ctrlflow.ml.depends, tags: { bin_annot, extension:ml, file:src/ext/ctrlflow.ml, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/ext/ctrlflow.ml > src/ext/ctrlflow.ml.depends # cached
+# Target: src/ext/ctrlflow.cmx, tags: { bin_annot, compile, extension:cmx, extension:ml, file:src/ext/ctrlflow.cmx, file:src/ext/ctrlflow.ml, implem, native, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlopt -c -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/ctrlflow.cmx src/ext/ctrlflow.ml # cached
+# Target: src/ext/dataflow.cmx, tags: { bin_annot, compile, extension:cmx, extension:ml, file:src/ext/dataflow.cmx, file:src/ext/dataflow.ml, implem, native, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlopt -c -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/dataflow.cmx src/ext/dataflow.ml # cached
+# Target: src/ext/propagation.ml.depends, tags: { bin_annot, extension:ml, file:src/ext/propagation.ml, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/ext/propagation.ml > src/ext/propagation.ml.depends # cached
+# Target: src/ext/propagation.mli.depends, tags: { bin_annot, extension:mli, file:src/ext/propagation.mli, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/ext/propagation.mli > src/ext/propagation.mli.depends # cached
+# Target: src/ext/propagation.cmi, tags: { bin_annot, byte, compile, extension:mli, file:src/ext/propagation.mli, interf, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/propagation.cmi src/ext/propagation.mli # cached
+# Target: src/ext/propagation.cmx, tags: { bin_annot, compile, extension:cmx, extension:ml, file:src/ext/propagation.cmx, file:src/ext/propagation.ml, implem, native, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlopt -c -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/propagation.cmx src/ext/propagation.ml # cached
+# Target: src/ext/callgraph.cmx, tags: { bin_annot, compile, extension:cmx, extension:ml, file:src/ext/callgraph.cmx, file:src/ext/callgraph.ml, implem, native, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlopt -c -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/callgraph.cmx src/ext/callgraph.ml # cached
+# Target: src/combine.ml.depends, tags: { bin_annot, extension:ml, file:src/combine.ml, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/combine.ml > src/combine.ml.depends # cached
+# Target: src/combine.mli.depends, tags: { bin_annot, extension:mli, file:src/combine.mli, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/combine.mli > src/combine.mli.depends # cached
+# Target: src/combine.cmi, tags: { bin_annot, byte, compile, extension:mli, file:src/combine.mli, interf, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/combine.cmi src/combine.mli # cached
+# Target: src/combine.cmx, tags: { bin_annot, compile, extension:cmx, extension:ml, file:src/combine.cmx, file:src/combine.ml, implem, native, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlopt -c -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/combine.cmx src/combine.ml # cached
+# Target: src/ext/directed.ml.depends, tags: { bin_annot, extension:ml, file:src/ext/directed.ml, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/ext/directed.ml > src/ext/directed.ml.depends # cached
+# Target: src/ext/directed.mli.depends, tags: { bin_annot, extension:mli, file:src/ext/directed.mli, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/ext/directed.mli > src/ext/directed.mli.depends # cached
+# Target: src/ext/directed.cmi, tags: { bin_annot, byte, compile, extension:mli, file:src/ext/directed.mli, interf, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/directed.cmi src/ext/directed.mli # cached
+# Target: src/ext/logging.ml.depends, tags: { bin_annot, extension:ml, file:src/ext/logging.ml, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/ext/logging.ml > src/ext/logging.ml.depends # cached
+# Target: src/ext/logging.mli.depends, tags: { bin_annot, extension:mli, file:src/ext/logging.mli, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/ext/logging.mli > src/ext/logging.mli.depends # cached
+# Target: src/ext/logging.cmi, tags: { bin_annot, byte, compile, extension:mli, file:src/ext/logging.mli, interf, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/logging.cmi src/ext/logging.mli # cached
+# Target: ocamlutil/clist.ml.depends, tags: { bin_annot, extension:ml, file:ocamlutil/clist.ml, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules ocamlutil/clist.ml > ocamlutil/clist.ml.depends # cached
+# Target: ocamlutil/clist.mli.depends, tags: { bin_annot, extension:mli, file:ocamlutil/clist.mli, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules ocamlutil/clist.mli > ocamlutil/clist.mli.depends # cached
+# Target: ocamlutil/clist.cmi, tags: { bin_annot, byte, compile, extension:mli, file:ocamlutil/clist.mli, interf, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I ocamlutil -I src -I src/ext -o ocamlutil/clist.cmi ocamlutil/clist.mli # cached
+# Target: ocamlutil/clist.cmx, tags: { bin_annot, compile, extension:cmx, extension:ml, file:ocamlutil/clist.cmx, file:ocamlutil/clist.ml, implem, native, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlopt -c -package batteries -package sha -I ocamlutil -I src -I src/ext -o ocamlutil/clist.cmx ocamlutil/clist.ml # cached
+# Target: src/modify.ml.depends, tags: { bin_annot, extension:ml, file:src/modify.ml, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/modify.ml > src/modify.ml.depends # cached
+# Target: src/modify.mli.depends, tags: { bin_annot, extension:mli, file:src/modify.mli, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/modify.mli > src/modify.mli.depends # cached
+# Target: src/modify.cmi, tags: { bin_annot, byte, compile, extension:mli, file:src/modify.mli, interf, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/modify.cmi src/modify.mli # cached
+# Target: src/ext/reaching.ml.depends, tags: { bin_annot, extension:ml, file:src/ext/reaching.ml, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/ext/reaching.ml > src/ext/reaching.ml.depends # cached
+# Target: src/ext/reaching.mli.depends, tags: { bin_annot, extension:mli, file:src/ext/reaching.mli, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/ext/reaching.mli > src/ext/reaching.mli.depends # cached
+# Target: src/ext/reaching.cmi, tags: { bin_annot, byte, compile, extension:mli, file:src/ext/reaching.mli, interf, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/reaching.cmi src/ext/reaching.mli # cached
+# Target: src/ext/reaching.cmx, tags: { bin_annot, compile, extension:cmx, extension:ml, file:src/ext/reaching.cmx, file:src/ext/reaching.ml, implem, native, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlopt -c -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/reaching.cmx src/ext/reaching.ml # cached
+# Target: src/modify.cmx, tags: { bin_annot, compile, extension:cmx, extension:ml, file:src/modify.cmx, file:src/modify.ml, implem, native, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlopt -c -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/modify.cmx src/modify.ml # cached
+# Target: src/ext/logging.cmx, tags: { bin_annot, compile, extension:cmx, extension:ml, file:src/ext/logging.cmx, file:src/ext/logging.ml, implem, native, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlopt -c -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/logging.cmx src/ext/logging.ml # cached
+# Target: src/ext/directed.cmx, tags: { bin_annot, compile, extension:cmx, extension:ml, file:src/ext/directed.cmx, file:src/ext/directed.ml, implem, native, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlopt -c -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/directed.cmx src/ext/directed.ml # cached
+# Target: src/dump.ml.depends, tags: { bin_annot, extension:ml, file:src/dump.ml, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/dump.ml > src/dump.ml.depends # cached
+# Target: src/dump.mli.depends, tags: { bin_annot, extension:mli, file:src/dump.mli, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/dump.mli > src/dump.mli.depends # cached
+# Target: src/dump.cmi, tags: { bin_annot, byte, compile, extension:mli, file:src/dump.mli, interf, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/dump.cmi src/dump.mli # cached
+# Target: src/dump.cmx, tags: { bin_annot, compile, extension:cmx, extension:ml, file:src/dump.cmx, file:src/dump.ml, implem, native, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlopt -c -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/dump.cmx src/dump.ml # cached
+# Target: src/ext/htmlunparse.ml.depends, tags: { bin_annot, extension:ml, file:src/ext/htmlunparse.ml, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/ext/htmlunparse.ml > src/ext/htmlunparse.ml.depends # cached
+# Target: src/ext/htmlunparse.mli.depends, tags: { bin_annot, extension:mli, file:src/ext/htmlunparse.mli, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/ext/htmlunparse.mli > src/ext/htmlunparse.mli.depends # cached
+# Target: src/ext/htmlunparse.cmi, tags: { bin_annot, byte, compile, extension:mli, file:src/ext/htmlunparse.mli, interf, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/htmlunparse.cmi src/ext/htmlunparse.mli # cached
+# Target: src/ext/htmlunparse.cmx, tags: { bin_annot, compile, extension:cmx, extension:ml, file:src/ext/htmlunparse.cmx, file:src/ext/htmlunparse.ml, implem, native, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlopt -c -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/htmlunparse.cmx src/ext/htmlunparse.ml # cached
+# Target: src/ext/liveness.ml.depends, tags: { bin_annot, extension:ml, file:src/ext/liveness.ml, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/ext/liveness.ml > src/ext/liveness.ml.depends # cached
+# Target: src/ext/liveness.mli.depends, tags: { bin_annot, extension:mli, file:src/ext/liveness.mli, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/ext/liveness.mli > src/ext/liveness.mli.depends # cached
+# Target: src/ext/liveness.cmi, tags: { bin_annot, byte, compile, extension:mli, file:src/ext/liveness.mli, interf, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/liveness.cmi src/ext/liveness.mli # cached
+# Target: src/ext/liveness.cmx, tags: { bin_annot, compile, extension:cmx, extension:ml, file:src/ext/liveness.cmx, file:src/ext/liveness.ml, implem, native, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlopt -c -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/liveness.cmx src/ext/liveness.ml # cached
+# Target: src/parse.ml.depends, tags: { bin_annot, extension:ml, file:src/parse.ml, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/parse.ml > src/parse.ml.depends # cached
+# Target: src/parse.mli.depends, tags: { bin_annot, extension:mli, file:src/parse.mli, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/parse.mli > src/parse.mli.depends # cached
+# Target: src/parse.cmi, tags: { bin_annot, byte, compile, extension:mli, file:src/parse.mli, interf, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/parse.cmi src/parse.mli # cached
+# Target: src/parse.cmx, tags: { bin_annot, compile, extension:cmx, extension:ml, file:src/parse.cmx, file:src/parse.ml, implem, native, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlopt -c -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/parse.cmx src/parse.ml # cached
+# Target: src/ext/testing.ml.depends, tags: { bin_annot, extension:ml, file:src/ext/testing.ml, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/ext/testing.ml > src/ext/testing.ml.depends
+# Target: src/ext/testing.mli.depends, tags: { bin_annot, extension:mli, file:src/ext/testing.mli, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/ext/testing.mli > src/ext/testing.mli.depends # cached
+# Target: src/ext/testing.cmi, tags: { bin_annot, byte, compile, extension:mli, file:src/ext/testing.mli, interf, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/testing.cmi src/ext/testing.mli # cached
+# Target: src/ext/unparse.ml.depends, tags: { bin_annot, extension:ml, file:src/ext/unparse.ml, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/ext/unparse.ml > src/ext/unparse.ml.depends # cached
+# Target: src/ext/unparse.mli.depends, tags: { bin_annot, extension:mli, file:src/ext/unparse.mli, ocaml, ocamldep, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamldep -package batteries -package sha -modules src/ext/unparse.mli > src/ext/unparse.mli.depends # cached
+# Target: src/ext/unparse.cmi, tags: { bin_annot, byte, compile, extension:mli, file:src/ext/unparse.mli, interf, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/unparse.cmi src/ext/unparse.mli # cached
+# Target: src/ext/unparse.cmx, tags: { bin_annot, compile, extension:cmx, extension:ml, file:src/ext/unparse.cmx, file:src/ext/unparse.ml, implem, native, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlopt -c -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/unparse.cmx src/ext/unparse.ml # cached
+# Target: src/ext/testing.cmx, tags: { bin_annot, compile, extension:cmx, extension:ml, file:src/ext/testing.cmx, file:src/ext/testing.ml, implem, native, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlopt -c -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/testing.cmx src/ext/testing.ml
++ /Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlopt -c -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/testing.cmx src/ext/testing.ml
+File "src/ext/testing.ml", line 30, characters 5-17:
+Warning 8: this pattern-matching is not exhaustive.
+Here is an example of a value that is not matched:
+[]
+File "src/ext/testing.ml", line 116, characters 4-52:
+Warning 10: this expression should have type unit.
+File "src/ext/testing.ml", line 29, characters 5-9:
+Warning 26: unused variable strs.
+File "src/ext/testing.ml", line 30, characters 6-16:
+Warning 26: unused variable logger_cid.
+File "src/ext/testing.ml", line 67, characters 9-18:
+Warning 26: unused variable stupidnop.
+File "src/ext/testing.ml", line 84, characters 6-9:
+Warning 26: unused variable sid.
+# Target: src/main.cmx, tags: { bin_annot, compile, extension:cmx, extension:ml, file:src/main.cmx, file:src/main.ml, implem, native, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlopt -c -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/main.cmx src/main.ml
++ /Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlopt -c -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/main.cmx src/main.ml
+File "src/main.ml", line 149, characters 2-124:
+Warning 8: this pattern-matching is not exhaustive.
+Here is an example of a value that is not matched:
+""
+# Target: src/main.native, tags: { bin_annot, dont_link_with, extension:native, file:src/main.native, link, native, ocaml, package(batteries), package(sha), program, quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlopt -linkpkg -package batteries -package sha ocamlutil/clist.cmx ocamlutil/enum.cmx ocamlutil/dynArray.cmx ocamlutil/stats.cmx ocamlutil/uChar.cmx ocamlutil/uTF8.cmx src/util.cmx src/instr.cmx src/java.cmx src/dex.cmx src/log.cmx src/visitor.cmx src/android.cmx src/combine.cmx src/dump.cmx src/ext/ctrlflow.cmx src/ext/dataflow.cmx src/ext/propagation.cmx src/ext/callgraph.cmx src/ext/reaching.cmx src/modify.cmx src/ext/logging.cmx src/ext/directed.cmx src/ext/htmlunparse.cmx src/ext/liveness.cmx src/ext/testing.cmx src/ext/unparse.cmx src/parse.cmx src/main.cmx -o src/main.native
+# Target: src/main.cmo, tags: { bin_annot, byte, compile, extension:cmo, extension:ml, file:src/main.cmo, file:src/main.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/main.cmo src/main.ml # cached
+# Target: src/android.cmo, tags: { bin_annot, byte, compile, extension:cmo, extension:ml, file:src/android.cmo, file:src/android.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/android.cmo src/android.ml # cached
+# Target: src/ext/callgraph.cmo, tags: { bin_annot, byte, compile, extension:cmo, extension:ml, file:src/ext/callgraph.cmo, file:src/ext/callgraph.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/callgraph.cmo src/ext/callgraph.ml # cached
+# Target: src/combine.cmo, tags: { bin_annot, byte, compile, extension:cmo, extension:ml, file:src/combine.cmo, file:src/combine.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/combine.cmo src/combine.ml # cached
+# Target: src/ext/ctrlflow.cmo, tags: { bin_annot, byte, compile, extension:cmo, extension:ml, file:src/ext/ctrlflow.cmo, file:src/ext/ctrlflow.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/ctrlflow.cmo src/ext/ctrlflow.ml # cached
+# Target: src/ext/dataflow.cmo, tags: { bin_annot, byte, compile, extension:cmo, extension:ml, file:src/ext/dataflow.cmo, file:src/ext/dataflow.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/dataflow.cmo src/ext/dataflow.ml # cached
+# Target: src/dex.cmo, tags: { bin_annot, byte, compile, extension:cmo, extension:ml, file:src/dex.cmo, file:src/dex.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/dex.cmo src/dex.ml # cached
+# Target: src/ext/directed.cmo, tags: { bin_annot, byte, compile, extension:cmo, extension:ml, file:src/ext/directed.cmo, file:src/ext/directed.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/directed.cmo src/ext/directed.ml # cached
+# Target: src/dump.cmo, tags: { bin_annot, byte, compile, extension:cmo, extension:ml, file:src/dump.cmo, file:src/dump.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/dump.cmo src/dump.ml # cached
+# Target: src/ext/htmlunparse.cmo, tags: { bin_annot, byte, compile, extension:cmo, extension:ml, file:src/ext/htmlunparse.cmo, file:src/ext/htmlunparse.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/htmlunparse.cmo src/ext/htmlunparse.ml # cached
+# Target: src/java.cmo, tags: { bin_annot, byte, compile, extension:cmo, extension:ml, file:src/java.cmo, file:src/java.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/java.cmo src/java.ml # cached
+# Target: src/ext/liveness.cmo, tags: { bin_annot, byte, compile, extension:cmo, extension:ml, file:src/ext/liveness.cmo, file:src/ext/liveness.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/liveness.cmo src/ext/liveness.ml # cached
+# Target: src/log.cmo, tags: { bin_annot, byte, compile, extension:cmo, extension:ml, file:src/log.cmo, file:src/log.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/log.cmo src/log.ml # cached
+# Target: src/ext/logging.cmo, tags: { bin_annot, byte, compile, extension:cmo, extension:ml, file:src/ext/logging.cmo, file:src/ext/logging.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/logging.cmo src/ext/logging.ml # cached
+# Target: src/modify.cmo, tags: { bin_annot, byte, compile, extension:cmo, extension:ml, file:src/modify.cmo, file:src/modify.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/modify.cmo src/modify.ml # cached
+# Target: src/parse.cmo, tags: { bin_annot, byte, compile, extension:cmo, extension:ml, file:src/parse.cmo, file:src/parse.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/parse.cmo src/parse.ml # cached
+# Target: src/ext/propagation.cmo, tags: { bin_annot, byte, compile, extension:cmo, extension:ml, file:src/ext/propagation.cmo, file:src/ext/propagation.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/propagation.cmo src/ext/propagation.ml # cached
+# Target: src/ext/reaching.cmo, tags: { bin_annot, byte, compile, extension:cmo, extension:ml, file:src/ext/reaching.cmo, file:src/ext/reaching.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/reaching.cmo src/ext/reaching.ml # cached
+# Target: ocamlutil/stats.cmo, tags: { bin_annot, byte, compile, extension:cmo, extension:ml, file:ocamlutil/stats.cmo, file:ocamlutil/stats.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I ocamlutil -I src -I src/ext -o ocamlutil/stats.cmo ocamlutil/stats.ml # cached
+# Target: src/ext/unparse.cmo, tags: { bin_annot, byte, compile, extension:cmo, extension:ml, file:src/ext/unparse.cmo, file:src/ext/unparse.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/unparse.cmo src/ext/unparse.ml # cached
+# Target: src/util.cmo, tags: { bin_annot, byte, compile, extension:cmo, extension:ml, file:src/util.cmo, file:src/util.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/util.cmo src/util.ml # cached
+# Target: src/visitor.cmo, tags: { bin_annot, byte, compile, extension:cmo, extension:ml, file:src/visitor.cmo, file:src/visitor.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/visitor.cmo src/visitor.ml # cached
+# Target: src/ext/testing.cmo, tags: { bin_annot, byte, compile, extension:cmo, extension:ml, file:src/ext/testing.cmo, file:src/ext/testing.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/testing.cmo src/ext/testing.ml
++ /Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/testing.cmo src/ext/testing.ml
+File "src/ext/testing.ml", line 30, characters 5-17:
+Warning 8: this pattern-matching is not exhaustive.
+Here is an example of a value that is not matched:
+[]
+File "src/ext/testing.ml", line 116, characters 4-52:
+Warning 10: this expression should have type unit.
+File "src/ext/testing.ml", line 29, characters 5-9:
+Warning 26: unused variable strs.
+File "src/ext/testing.ml", line 30, characters 6-16:
+Warning 26: unused variable logger_cid.
+File "src/ext/testing.ml", line 67, characters 9-18:
+Warning 26: unused variable stupidnop.
+File "src/ext/testing.ml", line 84, characters 6-9:
+Warning 26: unused variable sid.
+# Target: src/instr.cmo, tags: { bin_annot, byte, compile, extension:cmo, extension:ml, file:src/instr.cmo, file:src/instr.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/instr.cmo src/instr.ml # cached
+# Target: ocamlutil/dynArray.cmo, tags: { bin_annot, byte, compile, extension:cmo, extension:ml, file:ocamlutil/dynArray.cmo, file:ocamlutil/dynArray.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I ocamlutil -I src -I src/ext -o ocamlutil/dynArray.cmo ocamlutil/dynArray.ml # cached
+# Target: ocamlutil/uTF8.cmo, tags: { bin_annot, byte, compile, extension:cmo, extension:ml, file:ocamlutil/uTF8.cmo, file:ocamlutil/uTF8.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I ocamlutil -I src -I src/ext -o ocamlutil/uTF8.cmo ocamlutil/uTF8.ml # cached
+# Target: ocamlutil/enum.cmo, tags: { bin_annot, byte, compile, extension:cmo, extension:ml, file:ocamlutil/enum.cmo, file:ocamlutil/enum.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I ocamlutil -I src -I src/ext -o ocamlutil/enum.cmo ocamlutil/enum.ml # cached
+# Target: ocamlutil/uChar.cmo, tags: { bin_annot, byte, compile, extension:cmo, extension:ml, file:ocamlutil/uChar.cmo, file:ocamlutil/uChar.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I ocamlutil -I src -I src/ext -o ocamlutil/uChar.cmo ocamlutil/uChar.ml # cached
+# Target: ocamlutil/clist.cmo, tags: { bin_annot, byte, compile, extension:cmo, extension:ml, file:ocamlutil/clist.cmo, file:ocamlutil/clist.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -package batteries -package sha -I ocamlutil -I src -I src/ext -o ocamlutil/clist.cmo ocamlutil/clist.ml # cached
+# Target: src/main.byte, tags: { bin_annot, byte, dont_link_with, extension:byte, file:src/main.byte, link, ocaml, package(batteries), package(sha), program, quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -linkpkg -package batteries -package sha ocamlutil/stats.cmo ocamlutil/enum.cmo ocamlutil/dynArray.cmo ocamlutil/uChar.cmo ocamlutil/uTF8.cmo src/util.cmo src/instr.cmo src/java.cmo src/dex.cmo src/log.cmo src/visitor.cmo src/android.cmo src/combine.cmo ocamlutil/clist.cmo src/dump.cmo src/ext/ctrlflow.cmo src/ext/dataflow.cmo src/ext/propagation.cmo src/ext/callgraph.cmo src/ext/reaching.cmo src/modify.cmo src/ext/logging.cmo src/ext/directed.cmo src/ext/htmlunparse.cmo src/ext/liveness.cmo src/ext/testing.cmo src/ext/unparse.cmo src/parse.cmo src/main.cmo -o src/main.byte
+# Target: src/main.d.cmo, tags: { bin_annot, byte, compile, debug, extension:cmo, extension:ml, file:src/main.d.cmo, file:src/main.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -g -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/main.d.cmo src/main.ml # cached
+# Target: src/android.d.cmo, tags: { bin_annot, byte, compile, debug, extension:cmo, extension:ml, file:src/android.d.cmo, file:src/android.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -g -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/android.d.cmo src/android.ml # cached
+# Target: src/ext/callgraph.d.cmo, tags: { bin_annot, byte, compile, debug, extension:cmo, extension:ml, file:src/ext/callgraph.d.cmo, file:src/ext/callgraph.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -g -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/callgraph.d.cmo src/ext/callgraph.ml # cached
+# Target: src/combine.d.cmo, tags: { bin_annot, byte, compile, debug, extension:cmo, extension:ml, file:src/combine.d.cmo, file:src/combine.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -g -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/combine.d.cmo src/combine.ml # cached
+# Target: src/ext/ctrlflow.d.cmo, tags: { bin_annot, byte, compile, debug, extension:cmo, extension:ml, file:src/ext/ctrlflow.d.cmo, file:src/ext/ctrlflow.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -g -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/ctrlflow.d.cmo src/ext/ctrlflow.ml # cached
+# Target: src/ext/dataflow.d.cmo, tags: { bin_annot, byte, compile, debug, extension:cmo, extension:ml, file:src/ext/dataflow.d.cmo, file:src/ext/dataflow.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -g -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/dataflow.d.cmo src/ext/dataflow.ml # cached
+# Target: src/dex.d.cmo, tags: { bin_annot, byte, compile, debug, extension:cmo, extension:ml, file:src/dex.d.cmo, file:src/dex.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -g -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/dex.d.cmo src/dex.ml # cached
+# Target: src/ext/directed.d.cmo, tags: { bin_annot, byte, compile, debug, extension:cmo, extension:ml, file:src/ext/directed.d.cmo, file:src/ext/directed.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -g -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/directed.d.cmo src/ext/directed.ml # cached
+# Target: src/dump.d.cmo, tags: { bin_annot, byte, compile, debug, extension:cmo, extension:ml, file:src/dump.d.cmo, file:src/dump.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -g -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/dump.d.cmo src/dump.ml # cached
+# Target: src/ext/htmlunparse.d.cmo, tags: { bin_annot, byte, compile, debug, extension:cmo, extension:ml, file:src/ext/htmlunparse.d.cmo, file:src/ext/htmlunparse.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -g -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/htmlunparse.d.cmo src/ext/htmlunparse.ml # cached
+# Target: src/java.d.cmo, tags: { bin_annot, byte, compile, debug, extension:cmo, extension:ml, file:src/java.d.cmo, file:src/java.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -g -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/java.d.cmo src/java.ml # cached
+# Target: src/ext/liveness.d.cmo, tags: { bin_annot, byte, compile, debug, extension:cmo, extension:ml, file:src/ext/liveness.d.cmo, file:src/ext/liveness.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -g -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/liveness.d.cmo src/ext/liveness.ml # cached
+# Target: src/log.d.cmo, tags: { bin_annot, byte, compile, debug, extension:cmo, extension:ml, file:src/log.d.cmo, file:src/log.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -g -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/log.d.cmo src/log.ml # cached
+# Target: src/ext/logging.d.cmo, tags: { bin_annot, byte, compile, debug, extension:cmo, extension:ml, file:src/ext/logging.d.cmo, file:src/ext/logging.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -g -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/logging.d.cmo src/ext/logging.ml # cached
+# Target: src/modify.d.cmo, tags: { bin_annot, byte, compile, debug, extension:cmo, extension:ml, file:src/modify.d.cmo, file:src/modify.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -g -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/modify.d.cmo src/modify.ml # cached
+# Target: src/parse.d.cmo, tags: { bin_annot, byte, compile, debug, extension:cmo, extension:ml, file:src/parse.d.cmo, file:src/parse.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -g -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/parse.d.cmo src/parse.ml # cached
+# Target: src/ext/propagation.d.cmo, tags: { bin_annot, byte, compile, debug, extension:cmo, extension:ml, file:src/ext/propagation.d.cmo, file:src/ext/propagation.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -g -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/propagation.d.cmo src/ext/propagation.ml # cached
+# Target: src/ext/reaching.d.cmo, tags: { bin_annot, byte, compile, debug, extension:cmo, extension:ml, file:src/ext/reaching.d.cmo, file:src/ext/reaching.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -g -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/reaching.d.cmo src/ext/reaching.ml # cached
+# Target: ocamlutil/stats.d.cmo, tags: { bin_annot, byte, compile, debug, extension:cmo, extension:ml, file:ocamlutil/stats.d.cmo, file:ocamlutil/stats.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -g -package batteries -package sha -I ocamlutil -I src -I src/ext -o ocamlutil/stats.d.cmo ocamlutil/stats.ml # cached
+# Target: src/ext/unparse.d.cmo, tags: { bin_annot, byte, compile, debug, extension:cmo, extension:ml, file:src/ext/unparse.d.cmo, file:src/ext/unparse.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -g -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/unparse.d.cmo src/ext/unparse.ml # cached
+# Target: src/util.d.cmo, tags: { bin_annot, byte, compile, debug, extension:cmo, extension:ml, file:src/util.d.cmo, file:src/util.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -g -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/util.d.cmo src/util.ml # cached
+# Target: src/visitor.d.cmo, tags: { bin_annot, byte, compile, debug, extension:cmo, extension:ml, file:src/visitor.d.cmo, file:src/visitor.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -g -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/visitor.d.cmo src/visitor.ml # cached
+# Target: src/ext/testing.d.cmo, tags: { bin_annot, byte, compile, debug, extension:cmo, extension:ml, file:src/ext/testing.d.cmo, file:src/ext/testing.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -g -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/testing.d.cmo src/ext/testing.ml
++ /Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -g -package batteries -package sha -I src/ext -I src -I ocamlutil -o src/ext/testing.d.cmo src/ext/testing.ml
+File "src/ext/testing.ml", line 30, characters 5-17:
+Warning 8: this pattern-matching is not exhaustive.
+Here is an example of a value that is not matched:
+[]
+File "src/ext/testing.ml", line 116, characters 4-52:
+Warning 10: this expression should have type unit.
+File "src/ext/testing.ml", line 29, characters 5-9:
+Warning 26: unused variable strs.
+File "src/ext/testing.ml", line 30, characters 6-16:
+Warning 26: unused variable logger_cid.
+File "src/ext/testing.ml", line 67, characters 9-18:
+Warning 26: unused variable stupidnop.
+File "src/ext/testing.ml", line 84, characters 6-9:
+Warning 26: unused variable sid.
+# Target: src/instr.d.cmo, tags: { bin_annot, byte, compile, debug, extension:cmo, extension:ml, file:src/instr.d.cmo, file:src/instr.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -g -package batteries -package sha -I src -I ocamlutil -I src/ext -o src/instr.d.cmo src/instr.ml # cached
+# Target: ocamlutil/dynArray.d.cmo, tags: { bin_annot, byte, compile, debug, extension:cmo, extension:ml, file:ocamlutil/dynArray.d.cmo, file:ocamlutil/dynArray.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -g -package batteries -package sha -I ocamlutil -I src -I src/ext -o ocamlutil/dynArray.d.cmo ocamlutil/dynArray.ml # cached
+# Target: ocamlutil/uTF8.d.cmo, tags: { bin_annot, byte, compile, debug, extension:cmo, extension:ml, file:ocamlutil/uTF8.d.cmo, file:ocamlutil/uTF8.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -g -package batteries -package sha -I ocamlutil -I src -I src/ext -o ocamlutil/uTF8.d.cmo ocamlutil/uTF8.ml # cached
+# Target: ocamlutil/enum.d.cmo, tags: { bin_annot, byte, compile, debug, extension:cmo, extension:ml, file:ocamlutil/enum.d.cmo, file:ocamlutil/enum.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -g -package batteries -package sha -I ocamlutil -I src -I src/ext -o ocamlutil/enum.d.cmo ocamlutil/enum.ml # cached
+# Target: ocamlutil/uChar.d.cmo, tags: { bin_annot, byte, compile, debug, extension:cmo, extension:ml, file:ocamlutil/uChar.d.cmo, file:ocamlutil/uChar.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -g -package batteries -package sha -I ocamlutil -I src -I src/ext -o ocamlutil/uChar.d.cmo ocamlutil/uChar.ml # cached
+# Target: ocamlutil/clist.d.cmo, tags: { bin_annot, byte, compile, debug, extension:cmo, extension:ml, file:ocamlutil/clist.d.cmo, file:ocamlutil/clist.ml, implem, ocaml, package(batteries), package(sha), quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -c -g -package batteries -package sha -I ocamlutil -I src -I src/ext -o ocamlutil/clist.d.cmo ocamlutil/clist.ml # cached
+# Target: src/main.d.byte, tags: { bin_annot, byte, debug, dont_link_with, extension:byte, file:src/main.d.byte, link, ocaml, package(batteries), package(sha), program, quiet, traverse }
+/Users/mezzetti/.opam/4.00.1/bin/ocamlfind ocamlc -linkpkg -g -package batteries -package sha ocamlutil/stats.d.cmo ocamlutil/enum.d.cmo ocamlutil/dynArray.d.cmo ocamlutil/uChar.d.cmo ocamlutil/uTF8.d.cmo src/util.d.cmo src/instr.d.cmo src/java.d.cmo src/dex.d.cmo src/log.d.cmo src/visitor.d.cmo src/android.d.cmo src/combine.d.cmo ocamlutil/clist.d.cmo src/dump.d.cmo src/ext/ctrlflow.d.cmo src/ext/dataflow.d.cmo src/ext/propagation.d.cmo src/ext/callgraph.d.cmo src/ext/reaching.d.cmo src/modify.d.cmo src/ext/logging.d.cmo src/ext/directed.d.cmo src/ext/htmlunparse.d.cmo src/ext/liveness.d.cmo src/ext/testing.d.cmo src/ext/unparse.d.cmo src/parse.d.cmo src/main.d.cmo -o src/main.d.byte
+# Compilation successful.

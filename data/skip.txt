@@ -8,7 +8,6 @@ oauth.signpost
 android.annotation
 android.support
 com.android.vending
-com.google
 com.ebay
 twitter4j
 winterwell.jtwitter

@@ -69,14 +69,14 @@ let of_i (i: int) : string =
 (* v : string -> unit *)
 let v str : unit =
   match !level with
-  | LOG_VERBOSE -> ignore (Pf.fprintf stdout "%s\n" str)
+  | LOG_VERBOSE -> ignore (Pf.fprintf stdout "%s\n" str;  flush stdout)
   | _ -> ()
 
 (* d : string -> unit *)
 let d str : unit =
   match !level with
   | LOG_VERBOSE
-  | LOG_DEBUG -> ignore (Pf.fprintf stdout "%s\n" str)
+  | LOG_DEBUG -> ignore (Pf.fprintf stdout "%s\n" str;  flush stdout)
   | _ -> ()
 
 (* i : string -> unit *)
@@ -84,9 +84,10 @@ let i str : unit =
   match !level with
   | LOG_VERBOSE
   | LOG_DEBUG
-  | LOG_INFO -> ignore (Pf.fprintf stdout "%s\n" str)
+  | LOG_INFO -> ignore (Pf.fprintf stdout "%s\n" str;  flush stdout)
   | _ -> ()
 
 (* w : string -> unit *)
 let w str : unit =
-  ignore (Pf.fprintf stdout "%s\n" str)
+  ignore (Pf.fprintf stdout "%s\n" str;  flush stdout)
+	

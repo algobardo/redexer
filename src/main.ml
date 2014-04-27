@@ -101,8 +101,12 @@ let cls = ref ""
 let mtd = ref ""
 
 let get_citm (tx: D.dex) : D.code_item =
+	Log.i ("search for class " ^ !cls);
   let cid = D.get_cid tx (J.to_java_ty !cls) in
+	Log.i ("class " ^ !cls ^ " found");
+	Log.i ("search for method " ^ !mtd);
   let mid, _ = D.get_the_mtd tx cid !mtd in
+	Log.i ("method " ^ !mtd ^ " found");
   let _, citm = D.get_citm tx cid mid in citm
 
 let dump_method (tx: D.dex) : unit =
@@ -110,7 +114,7 @@ let dump_method (tx: D.dex) : unit =
   St.time "dump_method" Up.print_method tx citm
 
 let cg (tx: D.dex) : unit =
-  let g = St.time "callgraph" Cg.make_cg tx in
+  let g = St.time "callgraph" Cg.make_cg tx (fun x -> false) in
   St.time "callgraph" (Cg.cg2dot tx) g
 
 let get_cfg (tx: D.dex) : Ct.cfg =
@@ -138,7 +142,7 @@ let pdom (tx: D.dex) : unit =
 let pkg = ref ""
 
 let dependants (tx: D.dex) : unit =
-  let g = St.time "callgraph" Cg.make_cg tx in
+  let g = St.time "callgraph" Cg.make_cg tx (fun x -> false) in
   let cid = D.get_cid tx (J.to_java_ty !cls) in
   let cids = St.time "dependants" (Cg.dependants tx g) cid in
     L.iter (fun id -> Log.i (D.get_ty_str tx id)) cids
@@ -185,6 +189,10 @@ let act = ref "activity.txt"
 
 let instrument_testing (tx: D.dex) : unit =
   Testing.modify tx
+
+let dfa_analysis (tx: D.dex) : unit =
+  Dfa.make_dfa tx
+
 
 let instrument_logging (tx: D.dex) : unit =
   let rnm = !dat^"/rename" in
@@ -257,6 +265,7 @@ let do_listener      () = task := Some dolistener
 let do_logging       () = task := Some instrument_logging
 let do_directed      () = task := Some rewrite_directed
 let do_testing			() = task := Some instrument_testing
+let do_dfa_analysis			() = task := Some dfa_analysis
 
 let arg_specs = A.align
   [
@@ -296,6 +305,7 @@ let arg_specs = A.align
     ("-reach",      A.Unit do_reach,      " reaching definition");
     ("-listener",   A.Unit do_listener,   " find listener relations");
 		("-testing",   A.Unit do_testing,   " execute the testing shake");
+		("-dfa",   A.Unit do_dfa_analysis,   " execute dfa analysis");
 
     ("-logging",  A.Unit do_logging,
      " instrument logging feature into the given dex");

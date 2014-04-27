@@ -47,7 +47,7 @@ type cg
 val add_call : Dex.dex -> cg -> Dex.link -> Dex.link -> bool
 
 (** make call graph for overall {!Dex.dex} file *)
-val make_cg : Dex.dex -> cg
+val make_cg : Dex.dex -> (string -> bool) -> cg
 
 (** partial call graph starting from the given classes, with a certain depth *)
 val make_partial_cg : Dex.dex -> int -> Dex.link list -> cg

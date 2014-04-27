@@ -3,7 +3,7 @@
 set -e
 
 TARGET=src/main
-FLAGS=" -use-ocamlfind -pkgs sha,batteries"
+FLAGS=" -use-ocamlfind -pkgs sha,batteries,netstring,ocamlgraph"
 OCAMLBUILD=ocamlbuild
 
 ocb()

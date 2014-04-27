@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="OcamlProjectSettings">
 	<section name="OcamlbuildSettings">
-		<item value="" key="ocamlbuildProjectLinkerFlags"/>
+		<item value="-I /Users/mezzetti/.opam/system/lib" key="ocamlbuildProjectLinkerFlags"/>
 		<item value="unix,str" key="ocamlbuildProjectLibs"/>
 		<item value="-pkgs &quot;sha, batteries&quot;" key="ocamlbuildProjectOtherFlags"/>
-		<item value="" key="ocamlbuildProjectCompilerFlags"/>
+		<item value="-I /Users/mezzetti/.opam/system/lib" key="ocamlbuildProjectCompilerFlags"/>
 		<item value="true" key="ocamlbuildGenerateTypeInfo"/>
 		<item value="src/main.d.byte" key="ocamlbuildProjectTargets"/>
 	</section>

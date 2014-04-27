@@ -42,10 +42,23 @@
 (** {2 Control-Flow Graph} *)
 
 (** Control-Flow Graph *)
-type cfg
+
+type cfg = bb array
+
+and bb = {
+  kind  : bb_kind;
+  insns : Dex.link list;
+  mutable pred : int list;
+  mutable succ : int list;
+}
+
+and bb_kind = STRT | END | NORM
+
+val make_empty_cfg: cfg
 
 (** make control-flow graph for given {!Dex.code_item} *)
 val make_cfg : Dex.dex -> Dex.code_item -> cfg
+
 
 (** {2 Dominator Tree} *)
 
@@ -114,6 +127,10 @@ val to_module : Dex.dex -> cfg -> cfg_module
 
 (** print control-flow graph in dot format *)
 val cfg2dot : Dex.dex -> cfg -> unit
+
+(** return a control-flow graph in dot format *)
+val cfg2dot_str : Dex.dex -> cfg -> string
+
 
 (** print dominator tree in dot format *)
 val dom2dot : Dex.dex -> cfg -> dom -> unit

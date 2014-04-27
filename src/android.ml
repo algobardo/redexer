@@ -240,7 +240,7 @@ let is_library (cname: string) : bool =
 (* is_static_library : string -> bool *)
 let is_static_library (cname: string) : bool =
      U.begins_with cname "android.support"
-  || U.begins_with cname "com.google"
+  || U.begins_with cname "com.google" && not (BatString.exists cname "com.google.android.apps")
 
 (* is_abstract : string -> bool *)
 let is_abstract (mname: string) : bool =

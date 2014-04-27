@@ -253,13 +253,16 @@ let interpret_ins (dx: D.dex) (caller: D.link) (ins: D.link) : D.link list =
   )
   | _ -> []
 
-class cg_maker (dx: D.dex) =
+class cg_maker (dx: D.dex) filter =
 object
   inherit V.iterator dx
 
   method v_cdef (cdef: D.class_def_item) : unit =
     let cname = J.of_java_ty (D.get_ty_str dx cdef.D.c_class_id) in
-    skip_cls <- Adr.is_static_library cname || Ads.is_ads_pkg cname
+		Log.v ("Analysing " ^ cname);
+    skip_cls <- Adr.is_static_library cname || Ads.is_ads_pkg cname || (filter cname);
+		if skip_cls then
+			Log.v ("  skipped " ^ cname); 
 
   val mutable caller = D.no_idx
   method v_emtd (emtd: D.encoded_method) : unit =
@@ -271,19 +274,29 @@ object
 end
 
 (* make_cg : D.dex -> cg *)
-let make_cg (dx: D.dex) : cg =
+let make_cg (dx: D.dex) filter : cg =
   H.clear cg.clzz_h; H.clear cg.meth_h;
-  V.iter (new cg_maker dx);
+  Log.v "Iteration starting";
+	V.iter (new cg_maker dx filter);
+	Log.v ("Iteration finished " ^ (string_of_int (H.length cg.clzz_h)) ^ " clzz_h" ^ " and " ^  (string_of_int (H.length cg.meth_h)) ^ " meth_h ");
+	Log.v "Iterating to add calls";
   let iter i (mit: D.method_id_item) =
-    let cid = mit.D.m_class_id
-    and mid = D.to_idx i in
-    let sid = D.get_supermethod dx cid mid in
-    if sid <> D.no_idx then
-      (* implicit super() call relations *)
-      ignore (add_call dx cg mid sid)
+    let cid = mit.D.m_class_id in
+		if (not (filter (Dex.get_ty_str dx cid))) then
+		(
+      let mid = D.to_idx i in
+      let sid = D.get_supermethod dx cid mid in
+      if sid <> D.no_idx then
+  		(
+        (* implicit super() call relations *)
+  			Log.v ("Adding call " ^ (Dex.get_mtd_name dx mid) ^ " of class " ^ Dex.get_ty_str dx cid);
+        ignore (add_call dx cg mid sid)
+  		)
+		)
   in
   (* visitor see only impl methods; rather, see ids directly *)
   DA.iteri iter dx.D.d_method_ids;
+	Log.v ("Add calls finished " ^ (string_of_int (H.length cg.clzz_h)) ^ " clzz_h" ^ " and " ^  (string_of_int (H.length cg.meth_h)) ^ " meth_h ");
   cg
 
 (* make_partial_cg : D.dex -> int -> D.link list -> cg *)
@@ -440,6 +453,10 @@ let dependants (dx: D.dex) cg (cid: D.link) : D.link list =
 (***********************************************************************)
 (* DOTtify                                                             *)
 (***********************************************************************)
+	
+
+
+
 
 (* cg2dot : D.dex -> cg -> unit *)
 let cg2dot (dx: D.dex) cg : unit =

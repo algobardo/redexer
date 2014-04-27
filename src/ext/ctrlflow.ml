@@ -85,6 +85,8 @@ let is_changed bef aft : bool =
 (* Control-Flow Graph                                                  *)
 (***********************************************************************)
 
+let make_empty_cfg : cfg = Array.of_list []
+
 (* make_cfg : D.dex -> D.code_item -> cfg *)
 let rec make_cfg (dx: D.dex) (citm: D.code_item) : cfg =
   let inss = L.filter (D.is_ins dx) (DA.to_list citm.D.insns) in
@@ -401,6 +403,10 @@ let to_module (dx: D.dex) (g: cfg) : cfg_module =
 (* DOTtify                                                             *)
 (***********************************************************************)
 
+
+
+
+
 let ins_toDOT addr (op, opr) =
   pp "0x%08X: %s" (D.of_off addr) (I.op_to_string op);
   if opr <> [] then L.iter (fun opr -> pp " %s" (I.opr_to_string opr)) opr
@@ -430,6 +436,61 @@ let edge_toDOT g i j =
   let i = node_to_str g.(i).kind i
   and j = node_to_str g.(j).kind j in
   pp "  %s -> %s\n" i j
+
+
+
+
+
+
+
+
+let ins_toDOT_str addr (op, opr) =
+  let s1 = Printf.sprintf "0x%08X: %s" (Dex.of_off addr) (Instr.op_to_string op) in
+  let s2 = List.fold_left 
+		(fun s opr -> 
+			 s ^ (Instr.opr_to_string opr)
+		) "" opr
+	in
+	s1 ^ s2
+	
+let bb2node_str dx i bb =
+  match bb.kind with
+  | STRT -> Printf.sprintf "  start [shape=ellipse]\n"
+  | END  -> Printf.sprintf "  end [shape=ellipse]\n"
+  | NORM ->
+  (
+    let s1 = Printf.sprintf "  bb%d [label=\"" i in
+    let s2 = List.fold_left (fun s ins -> s ^ (ins_toDOT_str ins (Dex.get_ins dx ins)) ^ (Printf.sprintf "\\l")) "" bb.insns in
+    let s3 = Printf.sprintf "\"];\n" (* \\l : left-justified vs. \\n : centered *) in
+		s1 ^ s2 ^ s3
+  )
+
+let dot_prologue_str (g_name: string) =
+  Printf.sprintf "digraph %s {\n" g_name ^ " node [shape=record fontname=\"courier\"]\n"
+
+let edge_toDOT_str g i j =
+  let i = node_to_str g.(i).kind i
+  and j = node_to_str g.(j).kind j in
+  Printf.sprintf "  %s -> %s\n" i j
+
+
+
+
+
+
+(* cfg2dot : D.dex -> cfg -> string *)
+let cfg2dot_str (dx: D.dex) (g: cfg) : string=
+  let pre = dot_prologue_str "cfg" in
+	let nodes = ref "" in
+  A.iteri (fun i it -> nodes := !nodes ^ (bb2node_str dx i it)) g;
+	let dot_edge i bb =
+		List.fold_left (fun s it -> s ^ (edge_toDOT_str g i it)) "" bb.succ
+	in
+	let edges = ref "" in
+	A.iteri (fun i it -> edges := !edges ^ (dot_edge i it)) g;
+	(pre ^ !nodes ^ !edges ^ "}\n")
+
+
 
 (* cfg2dot : D.dex -> cfg -> unit *)
 let cfg2dot (dx: D.dex) (g: cfg) : unit =

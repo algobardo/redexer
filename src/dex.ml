@@ -544,6 +544,26 @@ let pub = [ACC_PUBLIC]
 (* spub : access_flag list *)
 let spub = ACC_STATIC :: pub
 
+
+
+(* PRINTING UTILITIES*)
+
+let link_toStr (lnk:link) = 
+	match lnk with
+  | Idx(e) -> string_of_int e
+  | Off(o) -> Int32.to_string o
+
+let method_id_item_toStr (mid:method_id_item) = 
+	"(m_class_id:"^(link_toStr mid. m_class_id) ^ "," ^
+  "(m_proto_id:"^(link_toStr mid.m_proto_id) ^ "," ^
+  "(m_name_id:"^(link_toStr mid.m_name_id) ^ ")"
+
+let dynarr_toStr f da =
+	(DynArray.fold_left (fun x y -> x ^ ";" ^ (f y)) "[" da) ^ "]"
+
+let method_id_item_arr_toStr da =
+	dynarr_toStr method_id_item_toStr da	
+
 (***********************************************************************)
 (* DEX Navigation                                                      *)
 (***********************************************************************)
@@ -601,8 +621,8 @@ let find_ty_str dx (str: string) : link =
   with Not_found -> no_idx
 
 let ty_comp_possibly_relaxed dx tid1 tid2 r =
-  let s1 = get_ty_str dx tid1
-  and s2 = get_ty_str dx tid2 in
+	let s1 = get_ty_str dx tid1 in
+  let s2 = get_ty_str dx tid2 in
   if r then
     try
       let c1 = J.get_class_name s1
@@ -873,6 +893,7 @@ let rec get_supermethod dx (cid: link) (mid: link) : link =
   -> link * method_id_item *)
 let rec get_the_mtd_abstr dx (cid: link) finder : link * method_id_item =
   try
+		(*(Log.i (method_id_item_arr_toStr dx.d_method_ids));*)
     let mid = DA.index_of (finder cid) dx.d_method_ids in
     to_idx mid, get_mit dx (to_idx mid)
   with Not_found ->
@@ -1044,4 +1065,3 @@ let insrt_stt dx (off: link) (evl : encoded_value list) : unit =
 (* insrt_citm : dex -> link -> code_item -> unit *)
 let insrt_citm dx (off: link) (citm: code_item) : unit =
   insrt_data dx off (CODE_ITEM citm)
-

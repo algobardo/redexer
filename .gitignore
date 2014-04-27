@@ -16,3 +16,4 @@ main.d.byte
 main.native
 main.byte
 rewrite.dex
+_build/

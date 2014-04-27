@@ -221,7 +221,7 @@ let make_cg (dx: D.dex) (acts: string list) : Cg.cg =
 *)
   let act_cids = DA.fold_left add_act IS.empty dx.D.d_class_defs in
   let cids = DA.fold_left add_listener act_cids dx.D.d_class_defs in
-  if !cg_depth <= 0 then Cg.make_cg dx
+  if !cg_depth <= 0 then Cg.make_cg dx (fun x -> false)
   else Cg.make_partial_cg dx !cg_depth (IS.elements cids)
 
 (***********************************************************************)

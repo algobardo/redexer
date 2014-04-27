@@ -17,3 +17,5 @@ main.native
 main.byte
 rewrite.dex
 _build/
+dot
+gml

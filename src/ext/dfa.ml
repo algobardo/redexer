@@ -24,32 +24,131 @@
 (* Data Flow Analysis                                                             *)
 (***********************************************************************)
 
+module UiActions =
+struct
+		
+type uiaction =
+	| Click
+	| Assert
+	| InsertText
+	| Timeout
+	| Nterm of string
+
+
+end
+
+module ActionsString =
+struct
+	let name = "ActionString"
+  type t = string
+  let compare = compare
+  let pair x y = y
+  let of_string x = x
+  let to_string x = x
+  let are_compatible x y = x=y
+  let conform x y = y
+
+let print ?oc:(oc=stdout) x = 
+  output_string oc (to_string x);
+  output_string oc "\n";
+  flush oc
+    
+let print_ ?oc:(oc=stdout) x = 
+  output_string oc (to_string x);
+  flush oc
+end
+
+
+
+module Word = Xlist.Make(Delim.None)(Vocab);;
+module WordSet = Xset.Make(Delim.Newline_no_bs)(Word)
+module Symbol = Symbols.Make(Vocab);;
+module NodeSet = Xset.Make(Delim.Comma_no_bs)(Node)
+module NodeSetSet = Xset.Make(Delim.Newline_no_bs)(NodeSet)
+module Edge = Edges.Make(Node)(Symbol)(Delim.Comma_no_bs)
+module EdgeSet = Xset.Make(Delim.Newline_no_bs)(Edge)
+
+(* Now we can make the FSA module. *)
+module FSA = Acceptors.Make(Vocab)(Word)(WordSet)(Symbol)
+  (Node)(NodeSet)(NodeSetSet)(Edge)(EdgeSet)(Delim.Excl_no_bs);;
+
+let join a1 a2 = 
+	FSA.minimize (FSA.union a1 a2)
+
+let changed a1 a2 =
+	FSA.are_isomorphic (FSA.minimize a1) (FSA.minimize a2) 
+
+let rec rmedge edgl =
+	match edgl with
+	| [] -> []
+	| hd::tl -> (Edge.origin) hd :: (rmedge tl)  
+
+let withnoout a = 
+	NodeSet.diff (FSA.nodes a) (NodeSet.of_list (rmedge (EdgeSet.elements (FSA.edges a))))
+	
+
+
+let widening a1 =
+	(* attach final nodes without outgoing edges to the start node*)
+	let finals = FSA.finals a1
+	and nout = withnoout a1 in
+	let endpoints = NodeSet.inter finals nout in
+	let actaut = ref a1 in
+	NodeSet.iter (fun start ->
+  	(
+			NodeSet.iter (fun x ->
+  		let edge = Edge.make x start (Symbol.of_string "")  in
+  		let newedges = EdgeSet.add edge (FSA.edges a1) in
+			actaut := (FSA.make (FSA.starts !actaut) (FSA.finals !actaut)  newedges) 
+  		) endpoints
+		) 
+	)
+	(FSA.starts a1)
+
+let seq_fsa a1 a2 = 
+	let newedges = ref EdgeSet.empty in
+	NodeSet.iter (
+		fun dest ->
+		NodeSet.iter (fun src ->
+			let edge = Edge.make src dest (Symbol.of_string "") in
+			newedges := EdgeSet.add edge !newedges
+		)
+		(FSA.finals a1)
+	)
+	(FSA.starts a2);
+	FSA.make (FSA.starts a1) (FSA.finals a2) (EdgeSet.union (EdgeSet.union (FSA.edges a1) (FSA.edges a1)) !newedges)
 
 type nd_kind =
   | Standard of content
   | MethodEntry of string
   | MethodExit of string
 and content =
-  { instr : Dex.link; abs_state : absState
+  { 
+		instr : Dex.link;
+		in_abs_state : absState;
+		out_abs_state : absState
   }
 and absState =
-  | Nothing
+{
+	mutable actions : FSA.t
+}
 
 module V = struct
   type t = nd_kind
   let compare = Pervasives.compare
-  let hash = Hashtbl.hash
+  let hash v = 
+		match v with 
+		| Standard (cnt) -> (Hashtbl.hash cnt.instr)
+		| _ -> Hashtbl.hash v
   let equal = (=)
 end
 module DFG = Graph.Imperative.Digraph.ConcreteBidirectional(V)
 
 
-
 type data_flow_graph =
 {
-  graph : DFG.t;
+  mutable graph : DFG.t;
 }
-
 
 (* ------------------ DEX utils -----------------------------------*)
 
@@ -101,7 +200,11 @@ let end_method dfg methodname =
 
 let make_dfg_insrs instr dfg =
 	let instradd it dfg =
-  	Standard { instr = it; abs_state = Nothing } in
+  	Standard { 
+			instr = it;
+			in_abs_state = {actions = FSA.empty};
+			out_abs_state = {actions = FSA.empty}
+		} in
 
 	let inst_nd = List.map (fun it -> instradd it dfg) instr in
 	let (first,prev) = (ref None,ref None) in
@@ -119,7 +222,6 @@ let make_dfg_insrs instr dfg =
 				prev := Some(it)
 	) inst_nd;
 	let (Some(first),Some(last)) = (!first,!prev) in
-	Log.v ("First " ^ (string_of_int (Hashtbl.hash first)));
 	(first,last)
 	
 let map_to_dfg_index all_links cfg_link =
@@ -142,7 +244,7 @@ let find_instr dfg in_link =
 		| _ -> ()
 		) dfg.graph;
 	match !ind with
-	| None -> Log.v "Index not found ";raise Not_found
+	| None -> raise Not_found
 	| Some v -> v
 
 let add_nodes methodname cfg dfg = 
@@ -154,9 +256,9 @@ let add_nodes methodname cfg dfg =
    in
    (* Add all instruction blocks and build mapping *)
 	let links = ref [] in
-	let findin y = List.find (fun x -> match x with (a,b,c) -> a = y) !links in
-	let findout y = List.find (fun x -> match x with (a,b,c) -> b = y) !links in
-	let findcfg y = List.find (fun x -> match x with (a,b,c) -> c = y) !links in
+	let find_byin y = List.find (fun x -> match x with (a,b,c) -> a = y) !links in
+	let find_byout y = List.find (fun x -> match x with (a,b,c) -> b = y) !links in
+	let find_bycfg y = List.find (fun x -> match x with (a,b,c) -> c = y) !links in
 	
 		Array.iteri   
 			(fun cfg_index cfg_item ->
@@ -164,20 +266,27 @@ let add_nodes methodname cfg dfg =
 				| Ctrlflow.STRT -> 
 					let mstart_node = (start_method dfg methodname) in  
 					DFG.add_vertex (dfg.graph) mstart_node;
-					List.iter (fun i -> links := (mstart_node,mstart_node,i)::!links) cfg_item.Ctrlflow.succ
+					links := (mstart_node,mstart_node,cfg_item)::!links
 				| Ctrlflow.END ->  
 					let mend_node = (end_method dfg methodname) in
 					DFG.add_vertex (dfg.graph) mend_node;
-					List.iter (fun i -> links := (mend_node,mend_node,i)::!links) cfg_item.Ctrlflow.succ
+					links := (mend_node,mend_node,cfg_item)::!links
 				| Ctrlflow.NORM ->
          	let (blk_start, blk_last) = make_dfg_insrs cfg_item.Ctrlflow.insns dfg in
-					List.iter (fun i -> links := (blk_start, blk_last,i)::!links) cfg_item.Ctrlflow.succ
+					links := (blk_start, blk_last,cfg_item)::!links
 			)
       cfg;
 			
 		List.iter 	
 			(fun x ->
-				()
+				match x with 
+				| (ins,outs,cfgi) ->
+					List.iter 
+					(
+						fun succcfg -> 
+							let (destin,_,_) = find_bycfg (Array.get cfg succcfg) in
+							DFG.add_edge (dfg.graph) outs destin;
+					) cfgi.Ctrlflow.succ
 			)
 		!links	
 
@@ -197,7 +306,7 @@ let ins_toDOT_str addr (op, opr) =
 
 let node_to_str nd i = "bb" ^ (string_of_int i)
 
-let bb2node_str dx nd =
+let nodelabel dx nd =
 	let i = (Hashtbl.hash nd) in
   match nd with
   | MethodEntry name ->
@@ -224,12 +333,12 @@ let edge_toDOT_str g s d =
   in Printf.sprintf "  bb%s -> bb%s\n" i j
 
 (* cfg2dot : D.dex -> cfg -> string *)
-let dfg2dot_str (dx : Dex.dex) g : string =
+let gendfg2dot (dx : Dex.dex) g nd_print : string =
   let pre = dot_prologue_str "cfg" in
   let nodes = Buffer.create 10000
   in
 		DFG.iter_vertex
-     (fun it -> Buffer.add_string nodes (bb2node_str dx it)) g.graph;
+     (fun it -> Buffer.add_string nodes (nd_print dx it)) g.graph;
   let edges = Buffer.create 10000 in
     
 	DFG.iter_edges
@@ -237,8 +346,8 @@ let dfg2dot_str (dx : Dex.dex) g : string =
   pre ^ ((Buffer.contents nodes) ^ ((Buffer.contents edges) ^ "}\n"))
 	
 	
-		
-
+let dfg2dot (dx : Dex.dex) g : string =		
+	gendfg2dot (dx : Dex.dex) g nodelabel
 
 (* ----------------- Graphmlfy ---------------------------- *)
 
@@ -279,68 +388,61 @@ let node_str dx nd =
 *)
 (* ---------------------------- Data Flow Analysis --------*)
 
-(*let add_method_links dfg links =
-	
-	(* Methods for removing invocation links *)
-	let remove_single_link id = 
-		let nd = get_byind dfg id in
-		let nextinstruction = DynArray.get (get_structure nd).next 0 in
-		(*Log.v "instruction after " ^ (str_of_instr_node nd) ^ (str_of_DfgInd nextinstruction)*)
-		DynArray.clear (get_structure nd).next;
-		(id,nextinstruction)
-	in
-	let rec remove_links ls =
-		match ls with
-		| hd::tl -> remove_single_link hd :: (remove_links tl)
-		| [] -> []
-	in
-	(* Disconecting method invocation *)
-	let all_invocations = List.map (fun x -> match x with (src,dst) -> src ) links in
-	let removed_links = remove_links all_invocations in
-	
-	List.iter
-	(
-	fun link ->
-		match link with 
-		| (src,dest) ->
-			let srcnd = get_byind dfg src in
-			match srcnd with
-			| (src_str,_) ->
-				(* Add the MethodEntry node as next of method invocation*)
-				DynArray.add src_str.next dest;
-				(* Add to the MethodExit node the instruction following the invocation*)
-				let (exit_str,_) = get_mexit_byentry dfg dest in
-				let (_,invocation_nextinstr) =  List.find (fun x -> let (s,d) = x in s=src) removed_links in
-				DynArray.add exit_str.next invocation_nextinstr
-	)			
-	links
-*)
-(*
-let forward_analysis dx (dfg: data_flow_graph)= 
-	
-	let get_invoked_links i nd =
+let nametoaction nm =
+	if BatString.exists nm "Solo.click" then
+		FSA.of_string "C"
+	else
+		FSA.empty
+
+
+let processnd node dfa dx =
+	match node with 
+	| MethodEntry (_) -> 
+		DFG.succ (dfa.graph) node
+	| MethodExit (_) -> 
+		DFG.succ (dfa.graph) node
+	| Standard (cnt) ->
+		(* Joining all previous out in current in *)
+		let preds = List.filter (fun x -> match x with Standard _ -> true | _ -> false) (DFG.pred dfa.graph node) in
+		let preds_out = List.map (fun x -> match x with Standard cnt -> cnt.out_abs_state.actions) preds in
+		cnt.in_abs_state.actions <- List.fold_left (fun res it -> join res it) cnt.in_abs_state.actions preds_out;
+		
+		let dexcalled = find_called_ins dx cnt.instr in
+  	let namecalled = List.map (
+				fun n ->
+					Dex.get_mtd_full_name dx n
+			) dexcalled in
+		let actioncalled = List.map nametoaction namecalled in 
+		let newactions = List.fold_left (fun st nm -> FSA.union nm st) FSA.empty actioncalled in
+		let newout = FSA.union cnt.in_abs_state.actions (seq_fsa cnt.in_abs_state.actions newactions) in 
+		if changed newout cnt.out_abs_state.actions then
 		(
-		match nd with
-		| (_,Standard (cont)) ->
-			let called = find_called_ins dx cont.instr in
-			let mappedcalled = List.fold_left (fun ls cld_link -> 
-				try (
-					(map_methodlink2dfgindex dx dfg cld_link)::ls
-					)
-					with 
-					| Not_found -> ls
-					) [] called in
-			(List.map (fun cld_link -> (DfgInd(i), cld_link)) mappedcalled) 
-		| _ -> []
+			cnt.out_abs_state.actions <- newout;
+			DFG.succ (dfa.graph) node
 		)
-	in
-	let all_links_list = DynArray.mapi get_invoked_links (dfg.graph) in
-	let all_links = DynArray.fold_left (fun ls it -> List.append ls it) [] all_links_list in
-	add_method_links dfg all_links
-	*)
-	
+		else
+			[]
+ 		
+let rec run_work_list list dfa dx = 
+	  match list with 
+		| [] -> ()
+		| hd::tl -> 
+			let add = processnd hd  dfa dx in 
+			run_work_list (tl @ add) dfa dx
+
+
 (* ---------------------------- Main methods -------------- *)
 
+let findmentry dfg = 
+	let found = ref None in
+	DFG.iter_vertex (fun v -> 
+		match v with
+		| MethodEntry _ -> found := Some(v)
+		| _ -> ()
+		) dfg.graph;
+	match !found with 
+	| Some (x) -> x
+	| _ -> Log.w "findmentry does not find any entry"; raise Not_found
 
 let savefile filename content =
   let oc = open_out ("dot/" ^ ((Netencoding.Url.encode filename) ^ ".dot"))
@@ -388,8 +490,16 @@ let make_dfa (dx : Dex.dex) : unit =
   (
 		Log.v "Action graph requested"; 
 		let alldfgs = merge_cfg_into_dfgs dx in
-		let nonemptydfg = List.filter (fun it -> let (name,x) = it in BatString.exists name "CreateTrack" ) alldfgs in
-		List.iter (fun it -> let (mname,dfg) = it in savefile mname (dfg2dot_str dx dfg)) nonemptydfg
+		let nonempty = List.filter (fun it -> let (name,x) = it in not (DFG.is_empty x.graph) ) alldfgs in
+		List.iter (fun it ->
+			let (mname,dfg) = it in
+			let mentry = (findmentry dfg) in
+				Log.v ("Working on " ^ mname);
+				run_work_list [mentry] dfg dx
+		) nonempty; 
+		(*Print all dfg*)
+		(*let nonemptydfg = List.filter (fun it -> let (name,x) = it in BatString.exists name "CreateTrack" ) alldfgs in*)
+		(*List.iter (fun it -> let (mname,dfg) = it in savefile mname (dfg2dot dx dfg)) nonemptydfg*)
 		(*List.iter (fun it -> let (mname,dfg) = it in savefile mname (GraphPrinter.print dx dfg.graph)) nonemptydfg*)
 	)
 	

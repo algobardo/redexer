@@ -1,0 +1,16 @@
+% 
+% This file specifies how the FSAs will be written 
+% It is a table.  
+% 
+% New line characters have to specified with <nl> and space with <sp>.
+% For some reason I don't understand, it wn't accept "\n" or "\\n"!!  
+%
+
+	lb	rb	delim
+Word			
+WordS			<nl>
+Edge			,
+NodeS			,
+NodeSS			<nl>
+EdgeS			<nl>
+FSA			!

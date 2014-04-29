@@ -1,0 +1,30 @@
+% Lines that begin wth '%' are comments.
+%
+% Here is an example machine representing the stress pattern of a language
+% which allows stressed monosyllables (based on Pintupi).
+
+% The start states are listed first. If there is more than one start state
+% they are separated by commas. Here we only have one.
+
+A!
+
+% The exclamation point delimits the start states from the transitions. It
+% doesn't have to be on the same line, though it is here.
+
+A,B,2
+B,C,0
+C,E,1
+E,C,0
+C,D,0
+
+% Transitions have three parts separated by commas: origin,terminus, label.
+
+% The exclamation point delimits the transitions from the final accepting
+% states which are delimited by commas.
+
+!B,C,D
+
+% If you prefer to use different delimiters than commas and exclamation points
+% you can do so. For command line usage, just write the delimiters you want to
+% use in the "fsa_specs" file. For OCaML programming, just build the FSA module
+% with different delimiter modules.

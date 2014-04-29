@@ -1,0 +1,116 @@
+*******************************************************************
+*  Finite State Machines (fsm)	       	       	       	       	  *
+*  author : Jeff Heinz					      	  *
+*  last updated : May 12, 2009			      	          *
+*  Installation requirements: OCaML 3.07+ and the xtype package.  *
+*******************************************************************
+
+This README has the following sections:
+
+* Requirements
+* Introduction
+* Installation
+* Usage
+* Examples
+
+************
+Requirements
+************
+
+There are two requirements:
+
+1) A working installation of OCaML.  If you don't have this, you can get it
+   from GODI at "http://godi.ocaml-programming.de/". You can find out more
+   about OCaML (and also get it) from the OCaML homepage
+   "http://caml.inria.fr/".
+
+2) The xtype library.  This package of modules is available where you got this-- at 
+   "http://phonology.cogsci.udel.edu/~heinz/software/".
+
+************
+Introduction
+************
+								   
+FSM consists of several OCaML modules in an OCaML libray, and a
+command line executable that implement finite state acceptors.  The
+implementation includes a number of functions including determinizing,
+minimizing (i.e. finding a canonical acceptor), multiplying, adding,
+generating words, merging of states to get new acceptors, etc.
+
+
+*************************
+Installation Instructions
+*************************
+
+1) Make sure that the xtype folder and the fsm folder are sister folders
+   (i.e. in the same directory).
+
+2) Make the current working directory /your/path/to/fsm.
+
+3) At the command line enter the following.
+
+       > make
+
+   If the modules in xtype have not been made yet, this should do it (as well
+   as the modules in fsm). 
+
+4) To make command line executable run quickly on your machine, type:
+
+       > make opt
+
+   If `make opt' has not been run from the xtype directory you will need to do
+   switch to that directory, type `make opt' in that directory and then return
+   to this directory and type `make opt'.
+
+5) To produce the documentation, enter the following two commands. I recommend
+   doing this to see how things work!
+
+       > mkdir doc  
+
+       > make doc
+
+   There will be a number of warning errors that appear when you make the
+   documentation. This is because I haven't figured out yet how to make it link
+   to the documentation in the Tools directory.
+
+6) That's it!
+
+
+*******
+Usage
+*******
+
+If you plan to use these program a lot, I recommend adding the following to your
+.ocamlinit file, which should always be in your home directory.
+
+   #directory "/your/path/to/xtype";;
+   #directory "/your/path/to/fsm";;
+
+   #load "xtype.cma";;
+   #load "fsm.cma";;
+
+
+The command line is run the way other OCaML executables are run. From the fsm
+directory, enter the following.
+
+   > ./fsa
+
+If you plan to use the executable a lot, I recommend setting up an alias.  The
+way you do this depends on what kind of shell you use. For the bash shell, you
+can add the following to your .bashrc file (in your home directory).
+
+alias fsa=/your/path/to/fsm/./fsa
+
+Then you can run it from anywhere.
+
+
+*********
+Examples
+*********
+
+There are some examples of usage of the OCaML modules and the command line
+executable in the directory called "examples". 
+
+***
+fin
+***

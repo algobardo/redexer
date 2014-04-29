@@ -1,0 +1,67 @@
+*******************
+Examples for fsa
+*******************
+
+
+Here are some examples of how the command line executable can be used.
+
+You can apply operations on files. 
+
+> ./fsa reverse pintupi.fsa
+
+As you can see, the result is printed to standard output. Thus you can
+redirect it to a file, if you like.
+
+> ./fsa reverse pintupi.fsa > pintupi_r.fsa
+
+If you leave the file name out, it will wait for you to enter a fsa.
+
+> ./fsa reverse
+
+Then enter the following:
+
+0!
+0,1,a
+!a
+
+
+Now we minimize the reverse acceptor. 
+
+> ./fsa minimize pintupi_r.fsa
+
+But we can do all of this in one step by piping:
+
+> ./fsa reverse pintupi.fsa | ./fsa minimize 
+
+We provide a quicker way by allowing the use of flags:
+
+> ./fsa reverse -m pintupi.fsa 
+
+Often we want to rename an acceptor we have minimized:
+
+> ./fsa reverse -m -rn pintupi.fsa
+
+When we stack flags they apply left to right.
+
+Of course we can always just rename directly, e.g:
+
+> ./fsa rename pintupi.fsa
+
+
+If you want to see an acceptor, pipe the output to the dot command.
+
+> ./fsa minimize -rn pintupi.fsa | dot -Tgif > pintupi.gif
+
+Then just open the gif with your favorite viewer.
+
+
+This should be enough to get you started. See the documentation for more
+information.
+
+
+
+
+
+
+
+

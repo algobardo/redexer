@@ -1,0 +1,10 @@
+%
+% This file specifies some options regarding how an FSA
+% is written as a dotfile.
+% It is a table.
+%
+	setting
+size	6,6
+rd	LR
+shape	circle
+fs	18
